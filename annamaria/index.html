@@ -368,6 +368,10 @@
 </div>
 </footer>
 <script>
+  window.AGENTE_API_BASE_URL = "https://agente-immobiliare-api.vercel.app";
+</script>
+
+<script>
 const explicitApiBaseUrl = window.AGENTE_API_BASE_URL;
 const isGithubPages = window.location.hostname.includes("github.io");
 const apiBaseUrl = explicitApiBaseUrl || (isGithubPages ? "" : "http://localhost:3000");
