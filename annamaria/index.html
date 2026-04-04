@@ -126,7 +126,17 @@
 </div>
 <!-- Valuation Form Card -->
 <div class="bg-surface-container-lowest p-8 md:p-10 rounded-xl shadow-2xl shadow-on-surface/5 editorial-shadow border border-outline-variant/15">
-<h3 class="font-headline text-2xl font-bold mb-6 text-on-surface">Richiedi Valutazione Gratis</h3>
+<!-- Tab switcher: Voglio vendere / Cerco casa -->
+<div class="flex rounded-lg bg-surface-container-low p-1 mb-6" id="form-tabs">
+<button class="flex-1 py-2.5 rounded-md text-sm font-bold transition-all bg-primary text-white shadow-md" id="tab-sell" onclick="switchFormTab('sell')" type="button">
+    🏠 Voglio vendere
+</button>
+<button class="flex-1 py-2.5 rounded-md text-sm font-bold transition-all text-on-surface-variant hover:bg-surface-container" id="tab-buy" onclick="switchFormTab('buy')" type="button">
+    🔍 Cerco casa
+</button>
+</div>
+
+<!-- FORM VENDITA (valutazione) -->
 <form class="space-y-5" id="valuation-form">
 <div class="space-y-4">
 <div>
@@ -174,6 +184,77 @@
                         Invia Richiesta
                     </button>
 <p class="hidden text-sm font-semibold" id="form-feedback"></p>
+<p class="text-[10px] text-center text-outline leading-tight mt-2">
+                        Inviando il modulo accetti la nostra Informativa sulla Privacy. I tuoi dati saranno trattati con la massima riservatezza.
+                    </p>
+</div>
+</form>
+
+<!-- FORM ACQUISTO (cerco casa) -->
+<form class="space-y-5 hidden" id="search-form">
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Nome e cognome</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all placeholder:text-outline" id="buy-name" name="name" placeholder="Il tuo nome completo" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Telefono</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-phone" name="phone" placeholder="+39" required="" type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Email</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-email" name="email" placeholder="nome@esempio.it" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Zona desiderata</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all placeholder:text-outline" id="buy-address" name="address" placeholder="Quartiere, città o zona (es. Brera, Milano)" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Budget massimo</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-price" min="0" name="price" placeholder="€ (max)" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Tipologia</label>
+<select class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-typology" name="typology">
+<option>Appartamento</option>
+<option>Villa</option>
+<option>Attico</option>
+<option>Loft</option>
+<option>Monolocale</option>
+<option>Altro</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Locali minimi</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-rooms" min="1" name="rooms" placeholder="es. 3" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Mq minimi</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-mq" min="0" name="mq" placeholder="es. 70" type="number"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Tempistica</label>
+<select class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-urgency" name="urgency">
+<option>Urgente — entro 1 mese</option>
+<option>Entro 3 mesi</option>
+<option>Entro 6 mesi</option>
+<option>Esplorativo — sto guardando</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Requisiti specifici</label>
+<textarea class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all placeholder:text-outline" id="buy-notes" name="notes" placeholder="Terrazzo, box auto, piano alto, giardino, ascensore..." rows="2"></textarea>
+</div>
+<button class="w-full py-3.5 rounded-md bg-gradient-to-br from-secondary to-tertiary text-white font-bold text-lg shadow-lg shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98] transition-all" type="submit">
+                        Invia Richiesta
+                    </button>
+<p class="hidden text-sm font-semibold" id="search-form-feedback"></p>
 <p class="text-[10px] text-center text-outline leading-tight mt-2">
                         Inviando il modulo accetti la nostra Informativa sulla Privacy. I tuoi dati saranno trattati con la massima riservatezza.
                     </p>
@@ -368,21 +449,74 @@
 </div>
 </footer>
 <script>
+// === Configurazione API ===
 const explicitApiBaseUrl = window.AGENTE_API_BASE_URL;
 const isGithubPages = window.location.hostname.includes("github.io");
 const apiBaseUrl = explicitApiBaseUrl || (isGithubPages ? "" : "http://localhost:3000");
-const form = document.getElementById("valuation-form");
-const feedback = document.getElementById("form-feedback");
 
-function setFeedback(message, isError) {
-  feedback.textContent = message;
-  feedback.classList.remove("hidden", "text-primary", "text-error");
-  feedback.classList.add(isError ? "text-error" : "text-primary");
+// === Tab Switch: Vendita / Acquisto ===
+function switchFormTab(tab) {
+  const sellForm = document.getElementById("valuation-form");
+  const buyForm = document.getElementById("search-form");
+  const tabSell = document.getElementById("tab-sell");
+  const tabBuy = document.getElementById("tab-buy");
+
+  if (tab === "sell") {
+    sellForm.classList.remove("hidden");
+    buyForm.classList.add("hidden");
+    tabSell.classList.add("bg-primary", "text-white", "shadow-md");
+    tabSell.classList.remove("text-on-surface-variant");
+    tabBuy.classList.remove("bg-secondary", "text-white", "shadow-md");
+    tabBuy.classList.add("text-on-surface-variant");
+  } else {
+    sellForm.classList.add("hidden");
+    buyForm.classList.remove("hidden");
+    tabBuy.classList.add("bg-secondary", "text-white", "shadow-md");
+    tabBuy.classList.remove("text-on-surface-variant");
+    tabSell.classList.remove("bg-primary", "text-white", "shadow-md");
+    tabSell.classList.add("text-on-surface-variant");
+  }
 }
 
-form?.addEventListener("submit", async (event) => {
-  event.preventDefault();
+// === Helper feedback ===
+function setFormFeedback(feedbackEl, message, isError) {
+  feedbackEl.textContent = message;
+  feedbackEl.classList.remove("hidden", "text-primary", "text-error");
+  feedbackEl.classList.add(isError ? "text-error" : "text-primary");
+}
 
+// === Invio generico al backend ===
+async function submitLead(payload, feedbackEl, formEl) {
+  try {
+    if (!apiBaseUrl) {
+      throw new Error("Landing pubblicata. Backend lead ancora da collegare.");
+    }
+    setFormFeedback(feedbackEl, "Invio in corso...", false);
+
+    const response = await fetch(`${apiBaseUrl}/api/leads`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await response.json();
+    if (!response.ok || !result.success) {
+      throw new Error(result.error || "Invio lead non riuscito.");
+    }
+
+    formEl.reset();
+    setFormFeedback(feedbackEl, "Richiesta inviata. Il lead è stato creato nel CRM.", false);
+  } catch (error) {
+    setFormFeedback(feedbackEl, error instanceof Error ? error.message : "Errore durante l'invio.", true);
+  }
+}
+
+// === Form VENDITA (valutazione) ===
+const sellForm = document.getElementById("valuation-form");
+const sellFeedback = document.getElementById("form-feedback");
+
+sellForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
   const payload = {
     name: document.getElementById("lead-name")?.value?.trim(),
     phone: document.getElementById("lead-phone")?.value?.trim(),
@@ -398,38 +532,44 @@ form?.addEventListener("submit", async (event) => {
     agency: "RE/MAX Change",
     date: new Date().toISOString()
   };
+  await submitLead(payload, sellFeedback, sellForm);
+});
 
-  try {
-    if (!apiBaseUrl) {
-      throw new Error("Landing pubblicata. Backend lead ancora da collegare.");
-    }
+// === Form ACQUISTO (cerco casa) ===
+const buyForm = document.getElementById("search-form");
+const buyFeedback = document.getElementById("search-form-feedback");
 
-    setFeedback("Invio in corso...", false);
+buyForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const typology = document.getElementById("buy-typology")?.value || "";
+  const rooms = document.getElementById("buy-rooms")?.value || "";
+  const mqMin = document.getElementById("buy-mq")?.value || "";
+  const notes = document.getElementById("buy-notes")?.value?.trim() || "";
 
-    const response = await fetch(`${apiBaseUrl}/api/leads`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    });
+  // Compone le note con i requisiti specifici dell'acquirente
+  const fullNotes = [
+    typology ? `Tipologia: ${typology}` : "",
+    rooms ? `Locali min: ${rooms}` : "",
+    mqMin ? `Mq min: ${mqMin}` : "",
+    notes
+  ].filter(Boolean).join(" · ");
 
-    const result = await response.json();
-
-    if (!response.ok || !result.success) {
-      throw new Error(result.error || "Invio lead non riuscito.");
-    }
-
-    form.reset();
-    setFeedback("Richiesta inviata. Il lead è stato creato nel CRM.", false);
-  } catch (error) {
-    setFeedback(
-      error instanceof Error
-        ? error.message
-        : "Errore durante l'invio della richiesta.",
-      true
-    );
-  }
+  const payload = {
+    name: document.getElementById("buy-name")?.value?.trim(),
+    phone: document.getElementById("buy-phone")?.value?.trim(),
+    email: document.getElementById("buy-email")?.value?.trim(),
+    address: document.getElementById("buy-address")?.value?.trim(),
+    mq: Number(mqMin || 0) || null,
+    price: Number(document.getElementById("buy-price")?.value || 0) || null,
+    urgency: document.getElementById("buy-urgency")?.value,
+    notes: fullNotes,
+    source: "landing_public_search",
+    channel: "website",
+    agent: "Annamaria Cerbone",
+    agency: "RE/MAX Change",
+    date: new Date().toISOString()
+  };
+  await submitLead(payload, buyFeedback, buyForm);
 });
 </script>
 </body></html>
