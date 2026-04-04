@@ -452,7 +452,7 @@
 // === Configurazione API ===
 const explicitApiBaseUrl = window.AGENTE_API_BASE_URL;
 const isGithubPages = window.location.hostname.includes("github.io");
-const apiBaseUrl = explicitApiBaseUrl || (isGithubPages ? "" : "http://localhost:3000");
+const apiBaseUrl = explicitApiBaseUrl || (isGithubPages ? "https://agente-immobiliare-api.vercel.app" : "http://localhost:3000");
 
 // === Tab Switch: Vendita / Acquisto ===
 function switchFormTab(tab) {
