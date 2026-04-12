@@ -79,6 +79,11 @@ footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:v
       <button class="tab-btn" data-tab="hub">🧠 Hub</button>
       <button class="tab-btn" data-tab="arco">✍️ Arco</button>
       <button class="tab-btn" data-tab="summervibes">🌅 SummerVibes</button>
+      <button class="tab-btn" data-tab="medday">💊 MedDay</button>
+      <button class="tab-btn" data-tab="documenti">📄 Documenti</button>
+      <button class="tab-btn" data-tab="letterine">🔤 Letterine</button>
+      <button class="tab-btn" data-tab="agente">🏘️ Agente Immobiliare</button>
+      <button class="tab-btn" data-tab="collectionkit">📦 CollectionKit</button>
     </div>
   </div>
 </div>
@@ -505,6 +510,171 @@ footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:v
   <h2>2. Acquisti in-app</h2>
   <p>Se presenti, gestiti da Apple tramite <strong>StoreKit 2</strong>. Lo sviluppatore non raccoglie dati di pagamento.</p>
   <h2>3. Contatti</h2>
+  <p>Email: <a href="mailto:michele.navolio@gmail.com">michele.navolio@gmail.com</a></p>
+</div>
+
+<!-- ── MedDay ── -->
+<div id="medday" class="privacy-content" hidden>
+  <div class="app-header-row">
+    <div class="app-icon-lg" style="background:rgba(255,149,0,0.15);">💊</div>
+    <div><div class="app-title">MedDay</div><div class="app-sub">Versione 1.0 · iOS 16+ · Aggiornato: 11 aprile 2026</div></div>
+  </div>
+  <div class="highlight-box"><p><strong>In sintesi:</strong> MedDay non raccoglie alcun dato personale. Tutti i dati rimangono sul tuo dispositivo. Nessun server esterno, nessun tracker, nessun account richiesto.</p></div>
+  <p>Michele Navolio ha sviluppato MedDay come app per la gestione delle terapie farmacologiche quotidiane, con modello freemium e acquisto opzionale in-app.</p>
+  <h2>1. Dati memorizzati localmente</h2>
+  <table>
+    <tr><th>Dato</th><th>Dove</th><th>Scopo</th></tr>
+    <tr><td>Nomi dei farmaci inseriti dall'utente</td><td>CoreData locale</td><td>Gestione terapia</td></tr>
+    <tr><td>Orari e frequenza delle dosi</td><td>CoreData locale</td><td>Notifiche e promemoria</td></tr>
+    <tr><td>Storico conferme e dosi saltate</td><td>CoreData locale</td><td>Compliance e report PDF</td></tr>
+    <tr><td>Date di scadenza opzionali</td><td>CoreData locale</td><td>Avvisi scadenza</td></tr>
+    <tr><td>Stato premium</td><td>UserDefaults locale</td><td>Feature gating</td></tr>
+  </table>
+  <p><strong>Nessun dato lascia mai il dispositivo.</strong> MedDay funziona completamente offline.</p>
+  <h2>2. Notifiche locali</h2>
+  <p>MedDay utilizza <strong>UNUserNotificationCenter</strong> (notifiche locali iOS) per ricordarti le dosi. Le notifiche sono generate interamente sul dispositivo — nessun dato viene inviato a server esterni.</p>
+  <h2>3. Export PDF</h2>
+  <p>Il PDF di compliance generato dall'app contiene i tuoi dati di terapia. È sotto il tuo controllo completo: puoi condividerlo tramite AirDrop, email o altre funzionalità standard di iOS. Lo sviluppatore non riceve né accede a questi PDF.</p>
+  <h2>4. Acquisti in-app</h2>
+  <p>Gestiti da Apple tramite <strong>StoreKit 2</strong>. Lo sviluppatore non raccoglie dati di pagamento.</p>
+  <h2>5. Analytics e tracking</h2>
+  <p>MedDay <strong>non integra SDK di terze parti</strong>, analytics, advertising o strumenti di tracciamento. Zero dipendenze esterne.</p>
+  <h2>6. Dati dei minori</h2>
+  <p>MedDay non è destinata a utenti sotto i 13 anni e non raccoglie intenzionalmente dati di minori.</p>
+  <h2>7. Diritti GDPR</h2>
+  <ul>
+    <li><strong>Cancellazione:</strong> Elimina l'app da Impostazioni iOS → Spazio iPhone → MedDay. Tutti i dati vengono eliminati.</li>
+    <li><strong>Accesso:</strong> Tutti i tuoi dati sono visibili direttamente nell'app (tab Oggi, Storico, Impostazioni).</li>
+    <li><strong>Portabilità:</strong> Export PDF compliance dal tab Storico.</li>
+  </ul>
+  <h2>8. Aggiornamenti futuri</h2>
+  <p>Se in versioni future verrà aggiunto il backup iCloud opzionale (CloudKit), questa Privacy Policy verrà aggiornata prima del rilascio. Poiché non raccogliamo dati, le modifiche riguarderanno esclusivamente nuove funzionalità opt-in.</p>
+  <h2>9. Contatti</h2>
+  <p>Email: <a href="mailto:privacy@navolioappstudio.com">privacy@navolioappstudio.com</a></p>
+</div>
+
+<!-- ── Documenti ── -->
+<div id="documenti" class="privacy-content" hidden>
+  <div class="app-header-row">
+    <div class="app-icon-lg" style="background:rgba(59,130,246,0.15);">📄</div>
+    <div><div class="app-title">Documenti</div><div class="app-sub">Versione 1.0 · iOS 17+ · Aggiornato: 12 aprile 2026</div></div>
+  </div>
+  <div class="highlight-box"><p><strong>In sintesi:</strong> Documenti non raccoglie dati personali. Tutti i documenti scansionati rimangono sul tuo dispositivo. Nessun server esterno, nessun tracker, nessun account richiesto.</p></div>
+  <p>Michele Navolio ha sviluppato Documenti come app per l'archiviazione digitale di documenti personali (carta d'identità, patente, tessera sanitaria, ecc.), con modello freemium e acquisto opzionale in-app.</p>
+  <h2>1. Dati memorizzati localmente</h2>
+  <table>
+    <tr><th>Dato</th><th>Dove</th><th>Scopo</th></tr>
+    <tr><td>Documenti scansionati (titolo, categoria, immagine, note)</td><td>SwiftData locale</td><td>Archiviazione documenti</td></tr>
+    <tr><td>Immagini acquisite tramite fotocamera</td><td>File system locale (externalStorage)</td><td>Visualizzazione documenti</td></tr>
+    <tr><td>Categorie personalizzate</td><td>SwiftData locale</td><td>Organizzazione</td></tr>
+    <tr><td>Preferenze app (lingua, tema)</td><td>UserDefaults locale</td><td>Personalizzazione</td></tr>
+    <tr><td>Stato premium</td><td>UserDefaults locale</td><td>Feature gating</td></tr>
+  </table>
+  <p><strong>Nessun dato lascia mai il dispositivo.</strong> Documenti funziona completamente offline.</p>
+  <h2>2. Fotocamera</h2>
+  <p>Documenti utilizza la fotocamera per scansionare documenti. Tutto avviene <strong>localmente sul dispositivo</strong>, senza trasmissione a server esterni.</p>
+  <h2>3. Acquisti in-app</h2>
+  <p>Gestiti da Apple tramite <strong>StoreKit 2</strong>. Lo sviluppatore non raccoglie dati di pagamento.</p>
+  <h2>4. Analytics e tracking</h2>
+  <p>Documenti <strong>non integra SDK di terze parti</strong>. Nessun tracciamento comportamentale.</p>
+  <h2>5. Diritti GDPR</h2>
+  <ul>
+    <li><strong>Cancellazione:</strong> Elimina l'app da Impostazioni iOS → Spazio iPhone → Documenti. Tutti i dati vengono eliminati.</li>
+    <li><strong>Accesso:</strong> Tutti i tuoi documenti sono visibili direttamente nell'app.</li>
+  </ul>
+  <h2>6. Contatti</h2>
+  <p>Email: <a href="mailto:michele.navolio@gmail.com">michele.navolio@gmail.com</a></p>
+</div>
+
+<!-- ── Letterine ── -->
+<div id="letterine" class="privacy-content" hidden>
+  <div class="app-header-row">
+    <div class="app-icon-lg" style="background:rgba(234,179,8,0.15);">🔤</div>
+    <div><div class="app-title">Letterine</div><div class="app-sub">Versione 1.0 · iOS 17+ · Aggiornato: 12 aprile 2026</div></div>
+  </div>
+  <div class="highlight-box"><p><strong>In sintesi:</strong> Letterine non raccoglie dati personali. I contenuti sono statici e locali. Nessun tracker, nessun server esterno, nessun account. App sicura per bambini (COPPA/GDPR-K compliant).</p></div>
+  <p>Michele Navolio ha sviluppato Letterine come app educativa per bambini 4–7 anni per imparare l'alfabeto giocando.</p>
+  <h2>1. Dati memorizzati localmente</h2>
+  <table>
+    <tr><th>Dato</th><th>Dove</th><th>Scopo</th></tr>
+    <tr><td>Progresso lettere esplorate</td><td>UserDefaults locale</td><td>Tracciamento progresso</td></tr>
+    <tr><td>Traguardi gamification (badge)</td><td>UserDefaults locale</td><td>Motivazione bambino</td></tr>
+    <tr><td>Preferenze app (lingua)</td><td>UserDefaults locale</td><td>Personalizzazione</td></tr>
+    <tr><td>Stato premium</td><td>UserDefaults locale</td><td>Feature gating</td></tr>
+  </table>
+  <h2>2. Dati dei minori</h2>
+  <p>Letterine è progettata per bambini 4–7 anni ma <strong>non raccoglie dati dei minori</strong>. Non contiene pubblicità, link esterni o acquisti in-app accessibili al bambino. Il download è effettuato dal genitore. Rating App Store: 4+.</p>
+  <h2>3. Acquisti in-app</h2>
+  <p>Gestiti da Apple tramite <strong>StoreKit 2</strong>. Lo sviluppatore non raccoglie dati di pagamento.</p>
+  <h2>4. Analytics e tracking</h2>
+  <p>Letterine <strong>non integra SDK di terze parti</strong>. Nessun tracciamento. L'analytics interno è solo in modalità debug per lo sviluppatore, nessun dato viene trasmesso a servizi esterni.</p>
+  <h2>5. Diritti GDPR</h2>
+  <ul>
+    <li><strong>Cancellazione:</strong> Elimina l'app da Impostazioni iOS → Spazio iPhone → Letterine</li>
+  </ul>
+  <h2>6. Contatti</h2>
+  <p>Email: <a href="mailto:michele.navolio@gmail.com">michele.navolio@gmail.com</a></p>
+</div>
+
+<!-- ── Agente Immobiliare ── -->
+<div id="agente" class="privacy-content" hidden>
+  <div class="app-header-row">
+    <div class="app-icon-lg" style="background:rgba(16,185,129,0.15);">🏘️</div>
+    <div><div class="app-title">Agente Immobiliare</div><div class="app-sub">In sviluppo · iOS 17+</div></div>
+  </div>
+  <div class="highlight-box"><p><strong>In sintesi:</strong> Agente Immobiliare non trasmette dati personali a server esterni non autorizzati. I dati degli immobili e dei clienti rimangono sul tuo dispositivo. Nessun tracker, nessun analytics di terze parti.</p></div>
+  <p>Michele Navolio sta sviluppando Agente Immobiliare come CRM per agenti immobiliari professionisti.</p>
+  <h2>1. Dati memorizzati localmente</h2>
+  <table>
+    <tr><th>Dato</th><th>Dove</th><th>Scopo</th></tr>
+    <tr><td>Schede immobili (indirizzo, metratura, prezzo, foto)</td><td>Core Data locale</td><td>Portafoglio immobili</td></tr>
+    <tr><td>Contatti clienti (nome, telefono, email, preferenze)</td><td>Core Data locale</td><td>CRM clienti</td></tr>
+    <tr><td>Appuntamenti e visite</td><td>Core Data locale</td><td>Agenda</td></tr>
+    <tr><td>Documenti e planimetrie</td><td>File system locale</td><td>Archivio</td></tr>
+    <tr><td>Stato premium</td><td>UserDefaults locale</td><td>Feature gating</td></tr>
+  </table>
+  <h2>2. Servizi esterni opzionali</h2>
+  <p>In versioni future, Agente Immobiliare potrebbe integrare API per visure catastali o ipotecarie. In tal caso, verranno trasmessi <strong>solo i dati strettamente necessari</strong> (es. riferimenti catastali) e questa Privacy Policy verrà aggiornata prima del rilascio.</p>
+  <h2>3. Acquisti in-app</h2>
+  <p>Gestiti da Apple tramite <strong>StoreKit 2</strong>. Lo sviluppatore non raccoglie dati di pagamento.</p>
+  <h2>4. Analytics e tracking</h2>
+  <p>Agente Immobiliare <strong>non integra SDK di terze parti</strong>. Nessun tracciamento comportamentale.</p>
+  <h2>5. Diritti GDPR</h2>
+  <ul>
+    <li><strong>Cancellazione:</strong> Elimina l'app da Impostazioni iOS → Spazio iPhone → Agente Immobiliare</li>
+    <li><strong>Responsabilità dati clienti:</strong> L'agente immobiliare che utilizza l'app è il titolare del trattamento dei dati dei propri clienti ai sensi del GDPR.</li>
+  </ul>
+  <h2>6. Contatti</h2>
+  <p>Email: <a href="mailto:michele.navolio@gmail.com">michele.navolio@gmail.com</a></p>
+</div>
+
+<!-- ── CollectionKit ── -->
+<div id="collectionkit" class="privacy-content" hidden>
+  <div class="app-header-row">
+    <div class="app-icon-lg" style="background:rgba(168,85,247,0.15);">📦</div>
+    <div><div class="app-title">CollectionKit</div><div class="app-sub">In sviluppo · iOS 17+</div></div>
+  </div>
+  <div class="highlight-box"><p><strong>In sintesi:</strong> Le app basate su CollectionKit non raccolgono dati personali. Tutti gli oggetti della tua collezione rimangono sul dispositivo. Nessun tracker, nessun server esterno, nessun account.</p></div>
+  <p>CollectionKit è un framework template di Michele Navolio per la creazione di app di gestione collezioni personalizzate. Ogni app derivata eredita le stesse garanzie di privacy.</p>
+  <h2>1. Dati memorizzati localmente</h2>
+  <table>
+    <tr><th>Dato</th><th>Dove</th><th>Scopo</th></tr>
+    <tr><td>Oggetti della collezione (nome, categoria, stato, note)</td><td>SwiftData locale</td><td>Gestione collezione</td></tr>
+    <tr><td>Immagini degli oggetti</td><td>File system locale</td><td>Visualizzazione</td></tr>
+    <tr><td>Categorie e filtri personalizzati</td><td>SwiftData locale</td><td>Organizzazione</td></tr>
+    <tr><td>Tema e preferenze app</td><td>UserDefaults locale</td><td>Personalizzazione</td></tr>
+    <tr><td>Stato premium</td><td>UserDefaults locale</td><td>Feature gating</td></tr>
+  </table>
+  <h2>2. Acquisti in-app</h2>
+  <p>Gestiti da Apple tramite <strong>StoreKit 2</strong>. Lo sviluppatore non raccoglie dati di pagamento.</p>
+  <h2>3. Analytics e tracking</h2>
+  <p>Le app CollectionKit <strong>non integrano SDK di terze parti</strong>. Nessun tracciamento comportamentale.</p>
+  <h2>4. Diritti GDPR</h2>
+  <ul>
+    <li><strong>Cancellazione:</strong> Elimina l'app da Impostazioni iOS → Spazio iPhone. Tutti i dati vengono eliminati.</li>
+    <li><strong>Portabilità:</strong> Export CSV (funzione Premium, se disponibile)</li>
+  </ul>
+  <h2>5. Contatti</h2>
   <p>Email: <a href="mailto:michele.navolio@gmail.com">michele.navolio@gmail.com</a></p>
 </div>
 
